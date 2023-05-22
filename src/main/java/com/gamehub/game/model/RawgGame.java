@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document
 @Getter
 @Setter
@@ -19,4 +21,11 @@ public class RawgGame {
     private String released;
 
     private int rating;
+
+    private String background_image;
+
+    private int metacritic;
+
+    private List<ParentPlatform> parent_platforms;
+
 }

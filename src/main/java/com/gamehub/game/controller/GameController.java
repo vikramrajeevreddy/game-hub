@@ -1,11 +1,10 @@
 package com.gamehub.game.controller;
 
+import com.gamehub.game.exception.RAWGApiException;
 import com.gamehub.game.model.RawgGame;
 import com.gamehub.game.service.GameService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +19,13 @@ public class GameController {
 
     @GetMapping("/games")
     @CrossOrigin("http://localhost:5173/")
-    public List<RawgGame> getGames(){
+    public List<RawgGame> getGames() throws RAWGApiException {
         return gameService.getRawgData();
+    }
+
+    @GetMapping("/games/errorhandler")
+    @CrossOrigin("http://localhost:5173/")
+    public ResponseEntity<List<RawgGame>> getGamesErrorHandled() throws RAWGApiException {
+        return ResponseEntity.ok().body(gameService.getRawgData());
     }
 }
