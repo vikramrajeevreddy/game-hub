@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RawgGameDto {
+public class RawgGamesDto {
         private long count;
-        private List<RawgGame> results = new ArrayList<>();
+        private List<RawgListGame> results = new ArrayList<>();
 }

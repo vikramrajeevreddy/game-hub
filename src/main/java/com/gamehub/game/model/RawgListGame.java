@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RawgGame {
+public class RawgListGame {
     private long id;
 
     private String name;
